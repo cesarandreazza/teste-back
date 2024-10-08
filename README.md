@@ -7,8 +7,8 @@ Para iniciar o projeto deve-se:
 2. Aplicar as Migrations do projeto Repositorio.csproj
 
 # Execução
-1.Executar via Visual Studio ou por linha de comando.
-2.Acessar Swagger
+1. Executar via Visual Studio ou por linha de comando.
+2. Acessar Swagger
 
 # Observações
 
