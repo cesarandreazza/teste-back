@@ -8,5 +8,8 @@ public class PedidoModeloCriar
     public string NomeCliente { get; set; } = null!;
     [Required]
     public string EmailCliente { get; set; } = null!;
-    public ICollection<ItemPedidoModeloCriar> Itens { get; set; } = null!;
+    [Required]
+    public bool Pago { get; set; }
+    [Required]
+    public ICollection<ItemPedidoModeloCriar> ItensPedido { get; set; } = null!;
 }

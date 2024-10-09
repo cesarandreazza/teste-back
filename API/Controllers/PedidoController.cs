@@ -17,7 +17,7 @@ namespace API.Controllers
         }
 
         [HttpPost("Criar")]
-        public async Task<IActionResult> Criar([FromBody] PedidoModeloAtualizar pedidoModeloCriar)
+        public async Task<IActionResult> Criar([FromBody] PedidoModeloCriar pedidoModeloCriar)
         {
             await _pedidoServicoApp.CriarAsync(pedidoModeloCriar);
             return Ok();
@@ -30,11 +30,19 @@ namespace API.Controllers
             return Ok();
         }
 
-        [HttpGet("Excluir")]
-        public async Task<IActionResult> Excluir([FromQuery] int? id)
+        [HttpGet("Excluir/{id}")]
+        public async Task<IActionResult> Excluir(int? id)
         {
             await _pedidoServicoApp.ExcluirAsync(id);
             return Ok();
+        }
+
+        [HttpGet("Obter/{id}")]
+        [ProducesResponseType(typeof(PedidoModeloListar), StatusCodes.Status200OK)]
+        public async Task<IActionResult> Obter(int? id)
+        {
+            var pedido = await _pedidoServicoApp.ObterAsync(id);
+            return Ok(pedido);
         }
 
         [HttpGet("Pedidos")]

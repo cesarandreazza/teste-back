@@ -27,7 +27,7 @@ public class PedidoServicoApp : IPedidoServicoApp
         await _pedidoServico.AtualizarAsync(pedido);
     }
 
-    public async Task CriarAsync(PedidoModeloAtualizar pedidoModeloCriar)
+    public async Task CriarAsync(PedidoModeloCriar pedidoModeloCriar)
     {
         if (pedidoModeloCriar == null)
         {
@@ -58,7 +58,7 @@ public class PedidoServicoApp : IPedidoServicoApp
         return pedidosModelo;
     }
 
-    public async Task<PedidoDto?> ObterAsync(int? id)
+    public async Task<PedidoModeloListar?> ObterAsync(int? id)
     {
         if (!id.HasValue)
         {
@@ -69,7 +69,7 @@ public class PedidoServicoApp : IPedidoServicoApp
         {
             return null;
         }
-        var pedidoDto = _mapper.Map<PedidoDto>(pedido);
-        return pedidoDto;
+        var pedidoModelo = _mapper.Map<PedidoModeloListar>(pedido);
+        return pedidoModelo;
     }
 }

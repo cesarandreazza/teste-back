@@ -15,7 +15,7 @@ public class MappingProfile : Profile
         CreateMap<ItemPedidoModeloCriar, ItensPedido>();
         CreateMap<ItemPedidoModeloAtualizar, ItensPedido>();
         CreateMap<PedidoModeloCriar, Pedido>()
-            .ForMember(dest => dest.ItensPedidos, opt => opt.MapFrom(src => src.Itens));
+            .ForMember(dest => dest.ItensPedidos, opt => opt.MapFrom(src => src.ItensPedido));
         CreateMap<ItensPedido, ItemPedidoModeloListar>()
             .ForMember(dest => dest.NomeProduto, opt => opt.MapFrom(src => src.Produto.Nome))
             .ForMember(dest => dest.ValorUnitario, opt => opt.MapFrom(src => src.Produto.Valor));

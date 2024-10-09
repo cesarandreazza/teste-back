@@ -14,4 +14,9 @@ public class PedidoRepositorio: RepositorioBase<Pedido>, IPedidoRepositorio
     {
         return await _dbSet.Include(a=>a.ItensPedidos).ThenInclude(a=>a.Produto).AsNoTracking().ToListAsync();
     }
+
+    public override async Task<Pedido?> ObterAsync(int id)
+    {
+        return await _dbSet.Include(a => a.ItensPedidos).ThenInclude(a => a.Produto).Where(a => a.Id == id).FirstOrDefaultAsync();
+    }
 }

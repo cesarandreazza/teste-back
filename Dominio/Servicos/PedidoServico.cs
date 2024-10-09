@@ -20,7 +20,6 @@ public class PedidoServico : Servico<Pedido>, IPedidoServico
         }
 
         pedido.DataCriacao = DateTime.Now;
-        pedido.Pago = true;
         await _pedidoRepositorio.CriarAsync(pedido);
     }
 }

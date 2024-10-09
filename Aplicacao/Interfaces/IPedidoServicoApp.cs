@@ -5,9 +5,9 @@ namespace Aplicacao.Interfaces;
 
 public interface IPedidoServicoApp
 {
-    Task CriarAsync(PedidoModeloAtualizar pedidoModeloCriar);
+    Task CriarAsync(PedidoModeloCriar pedidoModeloCriar);
     Task ExcluirAsync(int? id);
     Task AtualizarAsync(PedidoModeloAtualizar pedidoModeloAtualizar);
-    Task<PedidoDto?> ObterAsync(int? id);
+    Task<PedidoModeloListar?> ObterAsync(int? id);
     Task<IEnumerable<PedidoModeloListar>> ListarAsync();
 }
